@@ -133,6 +133,31 @@ char* my_fgets(char *str , int count, FILE *stream)
 
 }
 
-int my_getline(char s[], int lim);
+int my_getline(char s[], int lim)
+{
+    int c = 0;
+    int len = 0;
+    lim -= 1;
 
-char *my_strdup(char *s);
+    for (len = 0; (c = getchar()) != '\0' && len != lim && c != EOF; len++)
+    {
+        s[len] = (char) c;
+        if (c == '\n')
+            break;
+    }
+    return len;
+}
+
+char* my_strdup(char *src)
+{
+    char *dest = (char *) calloc(my_strlen(src) + 1, sizeof(char));
+
+    int i = 0;
+    
+    for (i = 0; src[i] != '\0'; i++)
+        dest[i] = src[i];
+
+    dest[i] = src[i];
+
+    return dest;
+}

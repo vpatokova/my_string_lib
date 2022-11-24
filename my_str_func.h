@@ -2,6 +2,7 @@
 #define MY_STR_FUNC_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int my_puts(const char *s);
 
