@@ -22,7 +22,7 @@ char* my_strncat(char *dest, const char *src, int count);
 
 char* my_fgets(char *str, int count, FILE *stream);
 
-int my_getline(char s[], int lim);
+int my_getline(char **lineptr, int n, FILE *stream)
 
 char *my_strdup(char *s);
 
